@@ -9,9 +9,11 @@ namespace RPSLS
     public class Options
     {
         public string name;
-        public Options (string name)
+        public int number;
+        public Options (string name, int number)
         {
             this.name = name;
+            this.number = number;
         }
     }
 }

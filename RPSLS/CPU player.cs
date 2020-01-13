@@ -8,17 +8,19 @@ namespace RPSLS
 {
     class CPU_player : Player
     {
+      
+        
         public CPU_player()
         {
             this.name = "CPU";
         }
-        public int CPUChoice()
+        public override void Choice()
 
         {
             
             Random rng = new Random();
-            int selection = rng.Next(1,6);
-            return selection;
+            int selection = rng.Next(0,5);
+            choice = selection;
         }
 
     }

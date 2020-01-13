@@ -13,19 +13,16 @@ namespace RPSLS
         public Options scissors;
         public Options lizard;
         public Options spock;
-       public List<Options> options= new List<Options>();
+        public List<Options> options;
         public Selection()
         {
-            rock = new Options("Rock");
-            paper = new Options("Paper");
-            scissors = new Options("Scissors");
-            lizard = new Options("Lizard");
-            spock = new Options("Spock");
-           options.Add(rock);
-            options.Add(paper);
-            options.Add(scissors);
-            options.Add(lizard);
-            options.Add(spock);
+            rock = new Options("Rock",1);
+            paper = new Options("Paper",2);
+            scissors = new Options("Scissors",3);
+            lizard = new Options("Lizard",4);
+            spock = new Options("Spock",5);
+            options = new List<Options>() { rock, paper, scissors, lizard, spock };
+          
         }
     }
 }

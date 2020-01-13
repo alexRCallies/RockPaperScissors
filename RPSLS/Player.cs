@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-   public class Player
+   abstract class Player
     {
        public string name;
+        public int choice;
 
         public Player()
         {
             
         }
+        public abstract void Choice();
+        //{
+        //    choice = int.Parse(Console.ReadLine());
+        //}
+        
+
+        
     }
 }

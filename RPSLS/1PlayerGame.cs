@@ -8,196 +8,106 @@ namespace RPSLS
 {
     class _1PlayerGame
     {
-        //Human_Player1 player1 = new Human_Player1();
-        CPU_player cpu = new CPU_player();
 
 
-       public _1PlayerGame()
+        Player player1;
+        Player player2;
+        PlayerSelector playerSelector = new PlayerSelector();
+
+        public _1PlayerGame()
         {
 
         }
-        public void RunCpuGame(List<Options> options)
+        public void RunGame(List<Options> options)
         {
-            int cpuCounter = 0;
-            int playerCounter = 0;
-            Console.WriteLine("What is your name?");
-                 Human_Player1 player1 = new Human_Player1();
+            //Console.WriteLine("How many players will there be 1 or 2");
+            //if(playerSelector == 1)
+            //{
+            //    player2 = new CPU_player();
+            //}
+            //if(playerSelector == 2)
+            //{
+            //    player2 = new Human_Player1();
+            //}
+            //Console.WriteLine("What is your name?");
+            //player1 = new Human_Player1();
+            playerSelector.HowManyPlayers();
+            if (playerSelector.choice == 1) 
+            {
+                Console.WriteLine("What is your name?:");
+                player1 = new Human_Player1();
+                player2 = new CPU_player();
+            }
+            if (playerSelector.choice == 2) 
+            {
+                Console.WriteLine("What is your name p1?:");
+                player1 = new Human_Player1();
+                Console.WriteLine("What is your name p2?:");
+                player2 = new Human_Player1();
+            }
             foreach (Options option in options)
             {
-                Console.WriteLine(option.name);
+                Console.WriteLine(option.name + option.number);
             }
-           
-            do
+
+
+            //while (cpuCounter < 2 && playerCounter < 2)
+            //{
+                player1.Choice();
+                if (player1.choice == options[0].number)
+                {
+                    Console.WriteLine(player1.name + " you chose:" + options[0].name);
+
+                }
+                if (player1.choice == options[1].number)
+                {
+                    Console.WriteLine(player1.name + " you chose:" + options[1].name);
+
+                }
+                if (player1.choice == options[2].number)
+                {
+                    Console.WriteLine(player1.name + " you chose:" + options[2].name);
+
+                }
+                if (player1.choice == options[3].number)
+                {
+                    Console.WriteLine(player1.name + " you chose:" + options[3].name);
+
+                }
+                if (player1.choice == options[4].number)
+                {
+                    Console.WriteLine(player1.name+" you chose:" + options[4].name);
+
+                }
+            player2.Choice();
+            if (player2.choice == options[0].number) 
             {
-                player1.choice = int.Parse(Console.ReadLine());
-               
-                if (player1.choice== 1 && cpu.CPUChoice() == 1)
-                {
-                    Console.WriteLine("Draw");
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 2 && cpu.CPUChoice() == 2)
-                {
-                    Console.WriteLine("Draw");
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 3 && cpu.CPUChoice() == 3)
-                {
-                    Console.WriteLine("Draw");
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 4 && cpu.CPUChoice() == 4)
-                {
-                    Console.WriteLine("Draw");
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 5 && cpu.CPUChoice() == 5)
-                {
-                    Console.WriteLine("Draw");
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 1 && cpu.CPUChoice() == 2)
-                {
-                    Console.WriteLine("Rock is covered by Paper");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 1 && cpu.CPUChoice() == 3)
-                {
-                    Console.WriteLine(options[0].name + " crushes " + options[2].name);
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 1 && cpu.CPUChoice() == 4)
-                {
-                    Console.WriteLine(options[0].name + " crushes " + options[3].name);
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-
-                }
-                if (player1.choice == 1 && cpu.CPUChoice() == 5)
-                {
-                    Console.WriteLine(options[0].name + " vaporized by " + options[4].name);
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 2 && cpu.CPUChoice() == 1)
-                {
-                    Console.WriteLine("Paper covers Rock");
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 2 && cpu.CPUChoice() == 3)
-                {
-                    Console.WriteLine("Paper is cut by Scissors");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 2 && cpu.CPUChoice() == 4)
-                {
-                    Console.WriteLine("Paper is eaten by Lizard");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 2 && cpu.CPUChoice() == 5)
-                {
-                    Console.WriteLine("Paper disproves Spock");
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 3 && cpu.CPUChoice() == 1)
-                {
-                    Console.WriteLine("Scissors is crushed by Rock");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 3 && cpu.CPUChoice() == 2)
-                {
-                    Console.WriteLine("Scissors cuts Paper");
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 3 && cpu.CPUChoice() == 4)
-                {
-                    Console.WriteLine("Scissors decapitates Lizard");
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 3 && cpu.CPUChoice() == 5)
-                {
-                    Console.WriteLine("Scissors is smashed by Spock");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 4 && cpu.CPUChoice() == 1)
-                {
-                    Console.WriteLine("Lizard is crushed by Rock");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-
-                }
-                if (player1.choice == 4 && cpu.CPUChoice() == 2)
-                {
-                    Console.WriteLine("Lizard eats Paper");
-                    playerCounter += 1;
-
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 4 && cpu.CPUChoice() == 3)
-                {
-                    Console.WriteLine("Lizard is decapitated by Scissors");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 4 && cpu.CPUChoice() == 5)
-                {
-                    Console.WriteLine("Lizard poisons Spock");
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 5 && cpu.CPUChoice() == 1)
-                {
-                    Console.WriteLine("Spock vaporizes Rock");
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 5 && cpu.CPUChoice() == 2)
-                {
-                    Console.WriteLine("Spock is disproved by Paper");
-                    cpuCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 5 && cpu.CPUChoice() == 3)
-                {
-                    Console.WriteLine("Spock vaporises Scissors");
-                    playerCounter += 1;
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
-                if (player1.choice == 5 && cpu.CPUChoice() == 4)
-                {
-                    Console.WriteLine("Spock is poisoned by Lizard");
-                    cpuCounter += 1;
-
-                    Console.WriteLine(playerCounter + "-" + cpuCounter);
-                }
+                Console.WriteLine(player2.name+" you chose:"+options[0].name);
             }
-            while (playerCounter < 3 || cpuCounter < 3);
-            if (
+            if (player2.choice == options[1].number)
+            {
+                Console.WriteLine(player2.name + " you chose:" + options[1].name);
+            }
+            if (player2.choice == options[2].number)
+            {
+                Console.WriteLine(player2.name + " you chose:" + options[2].name);
+            }
+            if (player2.choice == options[3].number)
+            {
+                Console.WriteLine(player2.name + " you chose:" + options[3].name);
+            }
+            if (player2.choice == options[4].number)
+            {
+                Console.WriteLine(player2.name + " you chose:" + options[4].name);
+            }
+
         }
     }
-}
+
+
+    }
+
+               
+        
+    
+
