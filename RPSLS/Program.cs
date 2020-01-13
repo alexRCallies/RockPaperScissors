@@ -10,6 +10,9 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            _1PlayerGame game = new _1PlayerGame();
+            Selection selections = new Selection();
+            game.RunCpuGame(selections.options);
         }
     }
 }
