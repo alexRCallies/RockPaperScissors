@@ -16,6 +16,7 @@ namespace RPSLS
         }
         public override void Choice()
         {
+            
             choice = int.Parse(Console.ReadLine());
         }
 

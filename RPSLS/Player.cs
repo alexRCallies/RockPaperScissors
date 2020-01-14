@@ -10,10 +10,11 @@ namespace RPSLS
     {
        public string name;
         public int choice;
+        public int counter;
 
         public Player()
         {
-            
+            this.counter = 0;
         }
         public abstract void Choice();
         //{
