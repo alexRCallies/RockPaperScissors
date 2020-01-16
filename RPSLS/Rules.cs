@@ -36,5 +36,12 @@ namespace RPSLS
             Console.WriteLine("Press ENTER to continue");
             Console.ReadLine();
         }
+        public void PrintOptions(List<Options>options)
+        {
+            foreach (Options option in options)
+            {
+                Console.WriteLine(option.name + " " + option.number);
+            }
+        }
     }
 }

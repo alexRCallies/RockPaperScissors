@@ -33,13 +33,13 @@ namespace RPSLS
                     player1 = new CPU_player(rng);
                     player2 = new CPU_player(rng);
                 }
-                if (numOfPlayers == "1")
+               else if (numOfPlayers == "1")
                 {
                     Console.WriteLine("What is your name?");
                     player1 = new Human_Player1();
                     player2 = new CPU_player(rng);
                 }
-                if (numOfPlayers == "2")
+               else if (numOfPlayers == "2")
                 {
                     Console.WriteLine("P1 What is your name>");
                     player1 = new Human_Player1();
@@ -47,6 +47,10 @@ namespace RPSLS
                     player2 = new Human_Player1();
                     Console.WriteLine("Welcome, " + player1.name + " and, " + player2.name);
                 }
+            else
+            {
+                SetNumOfPlayers();
+            }
                 
             
            
@@ -54,52 +58,61 @@ namespace RPSLS
         public void FindPlayerChoice(List<Options> options)
         {
             Console.WriteLine("What are you choosing");
+            //rules.PrintOptions(selection.options);
             player1.Choice();
             if (player1.choice == options[0].number)
             {
                 Console.WriteLine(player1.name + " you chose:" + options[0].name);
+                
 
             }
             if (player1.choice == options[1].number)
             {
                 Console.WriteLine(player1.name + " you chose:" + options[1].name);
+                
 
             }
             if (player1.choice == options[2].number)
             {
                 Console.WriteLine(player1.name + " you chose:" + options[2].name);
-
+                
             }
             if (player1.choice == options[3].number)
             {
                 Console.WriteLine(player1.name + " you chose:" + options[3].name);
-
+               
             }
             if (player1.choice == options[4].number)
             {
                 Console.WriteLine(player1.name + " you chose:" + options[4].name);
-
+                
             }
+            //rules.PrintOptions(selection.options);
             player2.Choice();
             if (player2.choice == options[0].number)
             {
                 Console.WriteLine(player2.name + " you chose:" + options[0].name);
+                
             }
             if (player2.choice == options[1].number)
             {
                 Console.WriteLine(player2.name + " you chose:" + options[1].name);
+               
             }
             if (player2.choice == options[2].number)
             {
                 Console.WriteLine(player2.name + " you chose:" + options[2].name);
+                
             }
             if (player2.choice == options[3].number)
             {
                 Console.WriteLine(player2.name + " you chose:" + options[3].name);
+                
             }
             if (player2.choice == options[4].number)
             {
                 Console.WriteLine(player2.name + " you chose:" + options[4].name);
+                
             }
         }
         public void ShowCounter()
@@ -346,55 +359,6 @@ namespace RPSLS
            SetNumOfPlayers();
             CompareChoices(selection.options);
             RestartGame();
-
-            //    player1.Choice();
-            //    if (player1.choice == options[0].number)
-            //    {
-            //        Console.WriteLine(player1.name + " you chose:" + options[0].name);
-
-            //    }
-            //    if (player1.choice == options[1].number)
-            //    {
-            //        Console.WriteLine(player1.name + " you chose:" + options[1].name);
-
-            //    }
-            //    if (player1.choice == options[2].number)
-            //    {
-            //        Console.WriteLine(player1.name + " you chose:" + options[2].name);
-
-            //    }
-            //    if (player1.choice == options[3].number)
-            //    {
-            //        Console.WriteLine(player1.name + " you chose:" + options[3].name);
-
-            //    }
-            //    if (player1.choice == options[4].number)
-            //    {
-            //        Console.WriteLine(player1.name+" you chose:" + options[4].name);
-
-            //    }
-            //player2.Choice();
-            //if (player2.choice == options[0].number) 
-            //{
-            //    Console.WriteLine(player2.name+" you chose:"+options[0].name);
-            //}
-            //if (player2.choice == options[1].number)
-            //{
-            //    Console.WriteLine(player2.name + " you chose:" + options[1].name);
-            //}
-            //if (player2.choice == options[2].number)
-            //{
-            //    Console.WriteLine(player2.name + " you chose:" + options[2].name);
-            //}
-            //if (player2.choice == options[3].number)
-            //{
-            //    Console.WriteLine(player2.name + " you chose:" + options[3].name);
-            //}
-            //if (player2.choice == options[4].number)
-            //{
-            //    Console.WriteLine(player2.name + " you chose:" + options[4].name);
-            //}
-            
         }
     }
 

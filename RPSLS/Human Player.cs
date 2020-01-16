@@ -16,8 +16,14 @@ namespace RPSLS
         }
         public override void Choice()
         {
-            
-            choice = int.Parse(Console.ReadLine());
+            try
+            {
+                choice = int.Parse(Console.ReadLine());
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("Enter between 1-5");
+            }
         }
 
     }
